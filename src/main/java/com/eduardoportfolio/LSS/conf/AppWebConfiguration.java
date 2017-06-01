@@ -6,13 +6,13 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.eduardoportfolio.LSS.controllers.EventController;
+import com.eduardoportfolio.LSS.controllers.HomeController;
 
 //It enables many features in our web application (Objects conversion for XML, Objects conversion for JSON,
 //Validating using the specification, Support to the RSS generator, and so on).
 @EnableWebMvc
 //Through this annotation we indicate what packages should be read.
-@ComponentScan(basePackageClasses={EventController.class})
+@ComponentScan(basePackageClasses={HomeController.class})
 //The principal objective of this class is show for the SpringMvc Servlet what classes should be read and loaded.
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
