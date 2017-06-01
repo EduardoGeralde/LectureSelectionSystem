@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1>Home LSS (Lecture Selection System)</h1>
+	
+	
 </body>
 </html>
