@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EventsController {
 	
 	@RequestMapping ("/events")
-	public String save () {
+	public String save (Event event) {
 		System.out.println("Registering the event");
 		return "events/ok";
 	}
