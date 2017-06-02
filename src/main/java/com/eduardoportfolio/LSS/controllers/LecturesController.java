@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LecturesController {
 	
 	@RequestMapping ("/lectures")
-	public String save () {
+	public String save (Lecture lecture) {
 		System.out.println("Registering the Lecture");
 		return "lectures/ok";
 	}
