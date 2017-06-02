@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 	
 	@RequestMapping ("/users")
-	public String save () {
+	public String save (User user) {
 		System.out.println("Registering the user");
 		return "users/ok";
 	}
