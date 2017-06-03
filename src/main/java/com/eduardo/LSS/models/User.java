@@ -1,7 +1,18 @@
 package com.eduardo.LSS.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+//Indicates that the class have to be represented by a table in DB.
+@Entity
 public class User {
 
+	//Indicates that the attribute is a primary key.
+	@Id
+	//Indicates how the primary key will be generated.
+	@GeneratedValue ( strategy = GenerationType.IDENTITY)
 	private Integer userId;
 	private String userName;
 	private String userEmail;
