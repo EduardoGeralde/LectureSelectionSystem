@@ -30,8 +30,8 @@
 			<input type="text" name="eventLocal" id="eventLocal" />
 		</div>
 		<div>
-			<label for="eventLogo">Event Logo</label>
-			<input type="file" name="eventLogo" id="eventLogo"/>
+			<label for="eventLogoPath">Event Logo</label>
+			<input type="file" name="eventLogoPath" id="eventLogoPath"/>
 		</div>
 		<div>
 			<label for="eventDate">Event Date</label>
