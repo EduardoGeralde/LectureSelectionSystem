@@ -9,15 +9,15 @@
 <body>
 	<h1>Home LSS (Lecture Selection System)</h1>
 	
-	<form method="get" action="/eventRegistration">
+	<form method="post" action="/LectureSelectionSystem/showEventForm">
 		<button type="submit">Event Registration</button>
 	</form>
 	
-	<form method="get" action="/lectureRegistration">
+	<form method="post" action="/LectureSelectionSystem/showLectureForm">
 		<button type="submit">Lecture Registration</button>
 	</form>
 	
-	<form method="get" action="/userRegistration">
+	<form method="post" action="/LectureSelectionSystem/showUserForm">
 		<button type="submit">User Registration</button>
 	</form>
 	
