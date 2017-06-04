@@ -1,10 +1,21 @@
 package com.eduardoportfolio.LSS.controllers;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ */
+
 //Tells that this class is effectively the responsible to meet requests from a client
 @Controller
+//Indicates that this methods needs transaction.
+@Transactional
 public class HomeController {
 	
 	//Binding (connection between a route and a method) Which method have to call for each URL
