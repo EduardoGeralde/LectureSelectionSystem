@@ -7,6 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import com.eduardoportfolio.LSS.models.Event;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ */
+
 //Indicates that this class besides being managed for the Spring, it is responsible for the data access.
 @Repository
 public class EventDao {

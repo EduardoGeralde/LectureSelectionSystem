@@ -5,6 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.eduardoportfolio.LSS.models.Event;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ */
+
 @Controller
 public class EventsController {
 	

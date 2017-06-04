@@ -7,6 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import com.eduardoportfolio.LSS.models.User;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ */
+
 @Repository
 public class UserDao {
 	

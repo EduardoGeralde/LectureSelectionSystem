@@ -5,6 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ */
+
 //Indicates that the class have to be represented by a table in DB.
 @Entity
 public class User {

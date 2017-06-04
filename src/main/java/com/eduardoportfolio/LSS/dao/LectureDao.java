@@ -7,6 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import com.eduardoportfolio.LSS.models.Lecture;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ */
+
 @Repository
 public class LectureDao {
 	

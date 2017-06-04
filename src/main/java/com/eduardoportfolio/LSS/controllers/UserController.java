@@ -5,6 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.eduardoportfolio.LSS.models.User;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ */
+
 @Controller
 public class UserController {
 	
