@@ -9,6 +9,18 @@
 <body>
 	<h1>Home LSS (Lecture Selection System)</h1>
 	
+	<form method="get" action="/eventRegistration">
+		<button type="submit">Event Registration</button>
+	</form>
+	
+	<form method="get" action="/lectureRegistration">
+		<button type="submit">Lecture Registration</button>
+	</form>
+	
+	<form method="get" action="/userRegistration">
+		<button type="submit">User Registration</button>
+	</form>
+	
 	
 </body>
 </html>
