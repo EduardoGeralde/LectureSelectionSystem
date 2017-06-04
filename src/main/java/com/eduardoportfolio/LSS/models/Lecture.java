@@ -1,9 +1,6 @@
 package com.eduardoportfolio.LSS.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Embeddable;
 import javax.persistence.Lob;
 
 /**
@@ -13,15 +10,10 @@ import javax.persistence.Lob;
  * 
  */
 
-//Indicates that the class have to be represented by a table in DB.
-@Entity
+//This embeddable class represents the lists of Lectures inside Event class.
+@Embeddable
 public class Lecture {
 	
-	//Indicates that the attribute is a primary key.
-	@Id
-	//Indicates how the primary key will be generated.
-	@GeneratedValue ( strategy = GenerationType.IDENTITY)
-	private Integer lectureId;
 	private String lecturerName;
 	private String lectureTitle;
 	//Indicates that it will be saved like a CLOB or BLOB in the DB.
@@ -52,9 +44,6 @@ public class Lecture {
 	}
 	public void setEventBelonging(String eventBelonging) {
 		this.eventBelonging = eventBelonging;
-	}
-	public Integer getLectureId() {
-		return lectureId;
 	}
 	
 }
