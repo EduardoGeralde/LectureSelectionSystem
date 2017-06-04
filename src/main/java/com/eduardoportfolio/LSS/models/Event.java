@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * 
@@ -34,7 +38,10 @@ public class Event {
 	private String eventOrganizer;
 	private String eventLocal;
 	private String eventLogoPath;
+	@DateTimeFormat(iso=ISO.DATE)
 	private Calendar eventDate;
+	//Used to define a collection of Embeddable objects
+	@ElementCollection
 	private List<Lecture> eventLectures = new ArrayList<Lecture>();
 	
 	public String getEventName() {
