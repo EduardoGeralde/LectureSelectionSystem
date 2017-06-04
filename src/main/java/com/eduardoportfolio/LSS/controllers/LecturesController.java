@@ -26,6 +26,11 @@ public class LecturesController {
 	@Autowired
 	LectureDao lectureDao = new LectureDao();
 	
+	@RequestMapping("/showLectureForm")
+	public String show(){
+		return "registration/lectureRegistration";
+	}
+	
 	@RequestMapping ("/lectures")
 	public String save (Lecture lecture) {
 		lectureDao.save(lecture);
