@@ -16,7 +16,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	//Tells SpringMVC which controller have to be mapped, and which classes has to be loaded.
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] {AppWebConfiguration.class};
+		return new Class[] {AppWebConfiguration.class, JPAConfiguration.class};
 	}
 
 	//Indicates what is the pattern of address that will be delegated to the SpringMVC servlet.
