@@ -2,9 +2,11 @@ package com.eduardoportfolio.LSS.controllers;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.eduardoportfolio.LSS.dao.UserDao;
 import com.eduardoportfolio.LSS.models.User;
 
 /**
@@ -20,8 +22,13 @@ import com.eduardoportfolio.LSS.models.User;
 @Transactional
 public class UserController {
 	
+	//Responsible to indicates the injection points inside the class
+	@Autowired
+	UserDao userDao = new UserDao();
+	
 	@RequestMapping ("/users")
 	public String save (User user) {
+		userDao.save(user);
 		System.out.println("Registering the user");
 		return "users/ok";
 	}
