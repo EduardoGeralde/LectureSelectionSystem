@@ -26,6 +26,11 @@ public class UserController {
 	@Autowired
 	UserDao userDao = new UserDao();
 	
+	@RequestMapping("/showUserForm")
+	public String show(){
+		return "registration/userRegistration";
+	}
+	
 	@RequestMapping ("/users")
 	public String save (User user) {
 		userDao.save(user);
