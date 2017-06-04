@@ -23,6 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * 
  */
 
+//Indicates that we are using Spring transactional control.
 @EnableTransactionManagement
 public class JPAConfiguration {
 
@@ -67,6 +68,9 @@ public class JPAConfiguration {
 	}
 	
 	@Bean
+	//Besides indicate that we are using Spring transactional control with annotation in the class,
+	//we have to tell which implementation we choose, in this case, we are using implementation for the
+	//JPA, we could use implementation directly for Hibernate or even to JDBC.
 	public PlatformTransactionManager transactionManager (EntityManagerFactory emf) {
 		
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
