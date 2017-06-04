@@ -26,6 +26,11 @@ public class EventsController {
 	@Autowired
 	private EventDao eventDao;
 	
+	@RequestMapping("/showEventForm")
+	public String show(){
+		return "registration/eventRegistration";
+	}
+	
 	@RequestMapping ("/events")
 	public String save (Event event) {
 		eventDao.save(event);
