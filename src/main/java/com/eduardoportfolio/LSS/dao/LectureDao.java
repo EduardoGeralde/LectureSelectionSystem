@@ -14,9 +14,11 @@ import com.eduardoportfolio.LSS.models.Lecture;
  * 
  */
 
+//Indicates that this class besides being managed for the Spring, it is responsible for the data access.
 @Repository
 public class LectureDao {
 	
+	//Used to inject Entity Manager
 	@PersistenceContext
 	private EntityManager manager;
 	
