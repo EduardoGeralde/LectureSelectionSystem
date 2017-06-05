@@ -11,7 +11,7 @@
 	<form method="post" action="/LectureSelectionSystem/users">
 		<div>
 			<label for="userName">User Name</label>
-			<input type="text" name="lecturerName" id="lecturerName" />
+			<input type="text" name="userName" id="userName" />
 		</div>
 		<div>
 			<label for="userEmail">User Email</label>
