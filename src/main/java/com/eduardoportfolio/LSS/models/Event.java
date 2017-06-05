@@ -96,4 +96,10 @@ public class Event {
 		return eventId;
 	}
 	
+	@Override
+	public String toString() {
+		return "Event [Name=" + eventName + ", Description=" + eventDescription + ", Organizer=" + eventOrganizer + 
+				", Local=" + eventLocal + ", Date=" + eventDate + "]";
+	}
+	
 }
