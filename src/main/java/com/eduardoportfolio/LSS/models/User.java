@@ -47,4 +47,9 @@ public class User {
 		return userId;
 	}
 	
+	@Override
+	public String toString() {
+		return "User [Name=" + userName + ", Email=" + userEmail + "]";
+	}
+	
 }
