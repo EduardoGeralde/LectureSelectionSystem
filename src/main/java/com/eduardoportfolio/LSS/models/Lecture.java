@@ -46,4 +46,10 @@ public class Lecture {
 		this.eventBelonging = eventBelonging;
 	}
 	
+	@Override
+	public String toString() {
+		return "Lecture [LecturerName=" + lecturerName + ", Title=" + lectureTitle + ", Description=" + lectureDescription + 
+				", EventBelonging=" + eventBelonging + "]";
+	}
+	
 }
