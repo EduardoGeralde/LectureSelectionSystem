@@ -18,10 +18,6 @@ public class HomeController {
 	//Binding (connection between a route and a method) Which method have to call for each URL
 	@RequestMapping("/")
 	public String index(){
-		return "homeLSS";
+		return "redirect:listEvents";
 	}
-	
-	
-
-	
 }
