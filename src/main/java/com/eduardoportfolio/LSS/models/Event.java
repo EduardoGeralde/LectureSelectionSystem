@@ -3,7 +3,6 @@ package com.eduardoportfolio.LSS.models;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -86,6 +85,8 @@ public class Event {
 	public void setEventDate(Calendar eventDate) {
 		this.eventDate = eventDate;
 	}
+	
+	
 	public List<Lecture> getEventLectures() {
 		return eventLectures;
 	}
