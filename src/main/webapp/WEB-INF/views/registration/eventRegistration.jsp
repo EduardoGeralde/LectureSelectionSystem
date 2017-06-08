@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Event Registration</h1>
-	<form method="post" action="/LectureSelectionSystem/events">
+	<form method="post" action="/LectureSelectionSystem/saveEvents">
 		<div>
 			<label for="eventName">Event Name</label>
 			<input type="text" name="eventName" id="eventName" />
