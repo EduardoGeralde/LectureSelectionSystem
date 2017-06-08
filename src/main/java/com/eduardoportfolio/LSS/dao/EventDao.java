@@ -1,5 +1,7 @@
 package com.eduardoportfolio.LSS.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -25,4 +27,10 @@ public class EventDao {
 	public void save (Event event){
 		manager.persist(event);
 	}
+	
+	public List<Event> list(){
+		return manager.createQuery("select distinct (p) from Event p join fetch p.eventLectures", Event.class).getResultList();
+	}
+	
+	
 }
