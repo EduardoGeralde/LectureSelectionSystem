@@ -31,7 +31,7 @@ public class UserController {
 		return "registration/userRegistration";
 	}
 	
-	@RequestMapping ("/users")
+	@RequestMapping ("/SaveUsers")
 	public String save (User user) {
 		userDao.save(user);
 		System.out.println("Registering the user");
