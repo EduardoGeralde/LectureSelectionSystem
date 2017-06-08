@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>User Registration</h1>
-	<form method="post" action="/LectureSelectionSystem/users">
+	<form method="post" action="/LectureSelectionSystem/SaveUsers">
 		<div>
 			<label for="userName">User Name</label>
 			<input type="text" name="userName" id="userName" />
