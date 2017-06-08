@@ -8,7 +8,11 @@
 </head>
 <body>
 	<h1>Lecture Registration</h1>
-	<form method="post" action="/LectureSelectionSystem/lectures">
+	<form method="post" action="/LectureSelectionSystem/SaveLectures">
+		<div>
+			<label for="Event_eventId">Event Belonging ID</label>
+			<input type="text" name="Event_eventId" id="Event_eventId" />
+		</div>
 		<div>
 			<label for="lecturerName">Lecturer Name</label>
 			<input type="text" name="lecturerName" id="lecturerName" />
@@ -20,10 +24,6 @@
 		<div>
 			<label for="lectureDescription">Lecture Description</label>
 			<textarea rows="10" cols="20" name="lectureDescription" id="lectureDescription"></textarea>
-		</div>
-		<div>
-			<label for="eventBelonging">Event Belonging</label>
-			<input type="text" name="eventBelonging" id="eventBelonging" />
 		</div>
 		<div>
 			<input type="submit" value="Save">
