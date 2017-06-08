@@ -19,7 +19,6 @@ public class Lecture {
 	//Indicates that it will be saved like a CLOB or BLOB in the DB.
 	@Lob
 	private String lectureDescription;
-	private String eventBelonging;
 	
 	public String getLecturerName() {
 		return lecturerName;
@@ -39,17 +38,11 @@ public class Lecture {
 	public void setLectureDescription(String lectureDescription) {
 		this.lectureDescription = lectureDescription;
 	}
-	public String getEventBelonging() {
-		return eventBelonging;
-	}
-	public void setEventBelonging(String eventBelonging) {
-		this.eventBelonging = eventBelonging;
-	}
+
 	
 	@Override
 	public String toString() {
-		return "Lecture [LecturerName=" + lecturerName + ", Title=" + lectureTitle + ", Description=" + lectureDescription + 
-				", EventBelonging=" + eventBelonging + "]";
+		return "Lecture [LecturerName=" + lecturerName + ", Title=" + lectureTitle + ", Description=" + lectureDescription + "]";
 	}
 	
 }
