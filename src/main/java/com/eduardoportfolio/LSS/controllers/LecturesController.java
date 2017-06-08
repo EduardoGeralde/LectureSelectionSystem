@@ -31,7 +31,7 @@ public class LecturesController {
 		return "registration/lectureRegistration";
 	}
 	
-	@RequestMapping ("/lectures")
+	@RequestMapping ("/SaveLectures")
 	public String save (Lecture lecture) {
 		lectureDao.save(lecture);
 		System.out.println("Saving Lecture" + lecture);
