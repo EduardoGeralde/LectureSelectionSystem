@@ -5,6 +5,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.eduardoportfolio.LSS.dao.EventDao;
 import com.eduardoportfolio.LSS.models.Event;
@@ -31,10 +33,19 @@ public class EventsController {
 		return "registration/eventRegistration";
 	}
 	
-	@RequestMapping ("/events")
+	@RequestMapping (value = "/saveEvents", method=RequestMethod.POST)
 	public String save (Event event) {
 		eventDao.save(event);
 		System.out.println("Saving the event" + event);
 		return "events/ok";
 	}
+	
+	@RequestMapping (value = "/listEvents", method=RequestMethod.GET)
+	public ModelAndView list(){
+		ModelAndView modelAndView = new ModelAndView("homeLSS");
+		modelAndView.addObject("events", eventDao.list());
+		return modelAndView;
+	}
+	
+	
 }
