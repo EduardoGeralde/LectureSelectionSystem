@@ -8,34 +8,39 @@
 </head>
 <body>
 	<h1>Home LSS (Lecture Selection System)</h1>
-	
-	<form action="/LectureSelectionSystem/showEventForm">
-		<button type="submit">Event Registration</button>
-	</form>
-	
-	<form action="/LectureSelectionSystem/showLectureForm">
-		<button type="submit">Lecture Registration</button>
-	</form>
-	
-	<form action="/LectureSelectionSystem/showUserForm">
-		<button type="submit">User Registration</button>
-	</form>
-	
 	<table>
 		<tr>
-			<td>Events</td>
-			<td>Lectures</td>
+			<td>
+				<form action="/LectureSelectionSystem/showUserForm">
+					<button type="submit">User Registration</button>
+				</form>
+			</td>
+			<td>
+				<form action="/LectureSelectionSystem/showEventForm">
+					<button type="submit">Event Registration</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td><h3>Events</h3></td>
 		</tr>
 		<c:forEach items="${events}" var="event">
 			<tr>
 				<td>${event.eventName}</td>
 				<td>${event.eventLocal}</td>
 				<td>${event.eventDate}</td>
-				<tr>
-					<c:forEach items="${event.eventLectures}" var="lectures">
-						[${lectures.lecturerName}-${lectures.lectureTitle}-${lectures.lectureDescription}]
-					</c:forEach>
-				</tr>
+			
+				<c:forEach items="${event.eventLectures}" var="lectures">
+					[${lectures.lecturerName}-${lectures.lectureTitle}-${lectures.lectureDescription}]
+				</c:forEach>
+			</tr>
+				<td>
+					<form action="/LectureSelectionSystem/showLectureForm">
+						<button type="submit">Lecture Registration</button>
+					</form>
+				</td>
 		</c:forEach>
 	</table>
 </body>
