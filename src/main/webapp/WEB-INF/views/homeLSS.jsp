@@ -31,10 +31,11 @@
 				<td>${event.eventName}</td>
 				<td>${event.eventLocal}</td>
 				<td>${event.eventDate}</td>
-			
+				<td>
 				<c:forEach items="${event.eventLectures}" var="lectures">
-					[${lectures.lecturerName}-${lectures.lectureTitle}-${lectures.lectureDescription}]
+				<br>[${lectures.lecturerName}-${lectures.lectureTitle}-${lectures.lectureDescription}]
 				</c:forEach>
+				</td>
 			</tr>
 				<td>
 					<form action="/LectureSelectionSystem/showLectureForm">
