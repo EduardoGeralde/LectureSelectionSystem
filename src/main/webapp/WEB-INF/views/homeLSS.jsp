@@ -37,11 +37,11 @@
 				</c:forEach>
 				</td>
 			</tr>
-				<td>
-					<form action="/LectureSelectionSystem/showLectureForm">
-						<button type="submit">Lecture Registration</button>
-					</form>
-				</td>
+			<td>
+				<form action="/LectureSelectionSystem/showLectureForm">
+					<button type="submit">Lecture Registration</button>
+				</form>
+			</td>
 		</c:forEach>
 	</table>
 </body>
