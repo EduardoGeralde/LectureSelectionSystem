@@ -16,7 +16,7 @@ public class Lecture {
 	
 	private String lecturerName;
 	private String lectureTitle;
-	//Indicates that it will be saved like a CLOB or BLOB in the DB.
+	//Indicates that it will be saved like a CLOB (Character Large Objects) or BLOB (Binary Large Objects) depends of the DB.
 	@Lob
 	private String lectureDescription;
 	
