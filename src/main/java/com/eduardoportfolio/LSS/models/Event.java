@@ -2,14 +2,22 @@ package com.eduardoportfolio.LSS.models;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
+import java.util.Collection;
+
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.Table;
 
+import org.hibernate.annotations.CollectionId;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
@@ -22,6 +30,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 //Indicates that the class have to be represented by a table in DB.
 @Entity
+@Table (name="EVENT_DETAILS")
 public class Event {
 	
 	//Indicates that the attribute is a primary key.
@@ -39,9 +48,14 @@ public class Event {
 	private String eventLogoPath;
 	@DateTimeFormat(iso=ISO.DATE)
 	private Calendar eventDate;
-	//Used to define a collection of Embeddable objects
+	//Used to define a collection of Embeddable objects (without PK)
 	@ElementCollection
-	private List<Lecture> eventLectures = new ArrayList<Lecture>();
+	@JoinTable (name="EVENT_LECTURE", joinColumns = @JoinColumn (name="EVENT_ID"))
+	//Set the type of the generator that the Hibernate provides (hilo is one of them)
+	@GenericGenerator(name="hilo-gen", strategy="hilo")
+	//Set a primary key with the index number of the indexed collection
+	@CollectionId(columns = { @Column(name="LECTURE_ID")}, generator = "hilo-gen", type = @Type(type="long"))
+	private Collection<Lecture> eventLectures = new ArrayList<Lecture>();
 	
 	public String getEventName() {
 		return eventName;
@@ -86,17 +100,19 @@ public class Event {
 		this.eventDate = eventDate;
 	}
 	
-	
-	public List<Lecture> getEventLectures() {
-		return eventLectures;
-	}
-	public void setEventLectures(List<Lecture> eventLectures) {
-		this.eventLectures = eventLectures;
-	}
 	public Integer getEventId() {
 		return eventId;
 	}
 	
+	public void setEventId(Integer eventId) {
+		this.eventId = eventId;
+	}
+	public Collection<Lecture> getEventLectures() {
+		return eventLectures;
+	}
+	public void setEventLectures(Collection<Lecture> eventLectures) {
+		this.eventLectures = eventLectures;
+	}
 	@Override
 	public String toString() {
 		return "Event [Name=" + eventName + ", Description=" + eventDescription + ", Organizer=" + eventOrganizer + 
