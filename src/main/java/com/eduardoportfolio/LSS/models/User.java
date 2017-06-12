@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * 
@@ -14,6 +15,7 @@ import javax.persistence.Id;
 
 //Indicates that the class have to be represented by a table in DB.
 @Entity
+@Table(name="USER_DETAILS")
 public class User {
 
 	//Indicates that the attribute is a primary key.
