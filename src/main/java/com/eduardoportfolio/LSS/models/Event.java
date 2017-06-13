@@ -50,6 +50,7 @@ public class Event {
 	private Calendar eventDate;
 	//Used to define a collection of Embeddable objects (without PK)
 	@ElementCollection
+	//Changing the table name, and the Id key name.
 	@JoinTable (name="EVENT_LECTURE", joinColumns = @JoinColumn (name="EVENT_ID"))
 	//Set the type of the generator that the Hibernate provides (hilo is one of them)
 	@GenericGenerator(name="hilo-gen", strategy="hilo")
