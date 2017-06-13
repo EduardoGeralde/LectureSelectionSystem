@@ -57,6 +57,7 @@ public class Event {
 	@CollectionId(columns = { @Column(name="LECTURE_ID")}, generator = "hilo-gen", type = @Type(type="long"))
 	private Collection<Lecture> eventLectures = new ArrayList<Lecture>();
 	
+	
 	public String getEventName() {
 		return eventName;
 	}
