@@ -31,6 +31,7 @@ public class User {
 	private String userEmail;
 	private String userPassword;
 	
+	//Indicates that each User can have many events, but each event has only one User.
 	@OneToMany
 	private Collection <Event> events = new ArrayList <Event>();
 	
