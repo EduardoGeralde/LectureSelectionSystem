@@ -1,9 +1,13 @@
 package com.eduardoportfolio.LSS.models;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -27,6 +31,9 @@ public class User {
 	private String userEmail;
 	private String userPassword;
 	
+	@OneToMany
+	private Collection <Event> events = new ArrayList <Event>();
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -47,6 +54,13 @@ public class User {
 	}
 	public Integer getUserId() {
 		return userId;
+	}
+	
+	public Collection<Event> getEvents() {
+		return events;
+	}
+	public void setEvents(Collection<Event> events) {
+		this.events = events;
 	}
 	
 	@Override
