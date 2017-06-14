@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CollectionId;
@@ -58,7 +59,11 @@ public class Event {
 	@CollectionId(columns = { @Column(name="LECTURE_ID")}, generator = "hilo-gen", type = @Type(type="long"))
 	private Collection<Lecture> eventLectures = new ArrayList<Lecture>();
 	
+	@ManyToOne
+	@JoinColumn (name="USER_ID")
+	private User user;
 	
+	 
 	public String getEventName() {
 		return eventName;
 	}
