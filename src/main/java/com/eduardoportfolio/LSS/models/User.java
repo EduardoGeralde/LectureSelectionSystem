@@ -32,7 +32,7 @@ public class User {
 	private String userPassword;
 	
 	//Indicates that each User can have many events, but each event has only one User.
-	@OneToMany
+	@OneToMany (mappedBy="user")
 	private Collection <Event> events = new ArrayList <Event>();
 	
 	public String getUserName() {
