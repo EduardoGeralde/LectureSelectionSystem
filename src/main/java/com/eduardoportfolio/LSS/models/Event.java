@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -17,7 +18,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CollectionId;
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -54,9 +54,9 @@ public class Event {
 	//Changing the table name, and the Id key name.
 	@JoinTable (name="EVENT_LECTURE", joinColumns = @JoinColumn (name="EVENT_ID"))
 	//Set the type of the generator that the Hibernate provides (hilo is one of them)
-	@GenericGenerator(name="hilo-gen", strategy="hilo")
+	//@GenericGenerator(name="native_generator", strategy="native")
 	//Set a primary key with the index number of the indexed collection
-	@CollectionId(columns = { @Column(name="LECTURE_ID")}, generator = "hilo-gen", type = @Type(type="long"))
+	//@CollectionId(columns = { @Column(name="LECTURE_ID")}, generator = "native", type = @Type(type="long"))
 	private Collection<Lecture> eventLectures = new ArrayList<Lecture>();
 	
 	@ManyToOne
