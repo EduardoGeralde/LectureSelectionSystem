@@ -5,9 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.eduardoportfolio.LSS.dao.LectureDao;
-import com.eduardoportfolio.LSS.models.Lecture;
 
 /**
  * 
@@ -27,14 +25,8 @@ public class LecturesController {
 	LectureDao lectureDao = new LectureDao();
 	
 	@RequestMapping("/showLectureForm")
-	public String show(){
+	public String form(){
 		return "registration/lectureRegistration";
 	}
 	
-	@RequestMapping ("/SaveLectures")
-	public String save (Lecture lecture) {
-		lectureDao.save(lecture);
-		System.out.println("Saving Lecture" + lecture);
-		return "lectures/ok";
-	}
 }
