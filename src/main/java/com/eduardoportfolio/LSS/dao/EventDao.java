@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
 import com.eduardoportfolio.LSS.models.Event;
+import com.eduardoportfolio.LSS.models.Lecture;
 
 /**
  * 
@@ -32,5 +34,11 @@ public class EventDao {
 		return manager.createQuery("select distinct (p) from Event p join fetch p.eventLectures", Event.class).getResultList();
 	}
 	
+	public Event find(Integer id) {
+		TypedQuery<Event> query = manager.createQuery(
+				"select distinct (p) from Event p join fetch p.eventLectures where p.id=:id",
+						Event.class).setParameter("id", id);
+		return query.getSingleResult();
+	}
 	
 }
