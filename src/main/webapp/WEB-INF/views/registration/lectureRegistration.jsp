@@ -8,10 +8,10 @@
 </head>
 <body>
 	<h1>Lecture Registration</h1>
-	<form method="post" action="/LectureSelectionSystem/SaveLectures">
+	<form method="post" action="/LectureSelectionSystem/saveLectures">
 		<div>
-			<label for="Event_eventId">Event Belonging ID</label>
-			<input type="text" name="Event_eventId" id="Event_eventId" />
+			<label for="eventId">Event Belonging ID</label>
+			<input type="text" value= "${event.eventId}" name="eventId" id="eventId" readonly="readonly"/>
 		</div>
 		<div>
 			<label for="lecturerName">Lecturer Name</label>
@@ -23,7 +23,8 @@
 		</div>
 		<div>
 			<label for="lectureDescription">Lecture Description</label>
-			<textarea rows="10" cols="20" name="lectureDescription" id="lectureDescription"></textarea>
+			<textarea rows="10" cols="20" name="lectureDescription" 
+										    id="lectureDescription"></textarea>
 		</div>
 		<div>
 			<input type="submit" value="Save">
