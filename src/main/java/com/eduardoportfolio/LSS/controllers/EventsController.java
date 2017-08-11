@@ -18,7 +18,7 @@ import com.eduardoportfolio.LSS.models.Lecture;
  * 
  * @author Eduardo Geralde Neto
  * 
- * 
+ * .
  */
 
 //Tells that this class is effectively the responsible to meet requests from a client
