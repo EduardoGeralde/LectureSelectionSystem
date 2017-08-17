@@ -25,13 +25,20 @@
 	</table>
 	<table>
 		<tr>
-			<td><h3>Events</h3></td>
+			<td>
+				<h3>Events</h3>
+			</td>
 		</tr>
 		<c:forEach items="${events}" var="event">
 			<tr>
 				<td>${event.eventName}</td>
 				<td>${event.eventLocal}</td>
 				<td>${event.eventDate}</td>
+				<td>
+					<form action="/LectureSelectionSystem/closeLectures">
+						<button type="submit">Close new lectures</button>
+					</form>
+				</td>
 				<td>
 				<c:forEach items="${event.eventLectures}" var="lectures">
 				<br>[${lectures.lecturerName}-${lectures.lectureTitle}-${lectures.lectureDescription}]
