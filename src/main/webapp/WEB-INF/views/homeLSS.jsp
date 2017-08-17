@@ -39,10 +39,9 @@
 				</td>
 			</tr>
 			<td>
+				<c:if test="${event.eventActive}">
 				<a href="${spring:mvcUrl('EC#show').arg(0,event.eventId).build()}">Add Lecture</a>
-				<!--  <form action="/LectureSelectionSystem/showLectureForm">-->
-				<!--  <button type="submit">Lecture Registration</button>-->
-				</form>
+				</c:if>
 			</td>
 		</c:forEach>
 	</table>
