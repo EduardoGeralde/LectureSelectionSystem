@@ -35,18 +35,21 @@
 				<td>${event.eventLocal}</td>
 				<td>${event.eventDate}</td>
 				<td>
-					<a href="${spring:mvcUrl('EC#closeNewLectures').arg(0,event.eventId).build()}">Close new Lectures</a>
-				</td>
-				<td>
-				<c:forEach items="${event.eventLectures}" var="lectures">
-				<br>[${lectures.lecturerName}-${lectures.lectureTitle}-${lectures.lectureDescription}]
-				</c:forEach>
+					<c:forEach items="${event.eventLectures}" var="lectures">
+					<br>[${lectures.lecturerName}-${lectures.lectureTitle}-${lectures.lectureDescription}]
+					</c:forEach>
 				</td>
 			</tr>
 			<td>
 				<c:if test="${event.eventActive}">
-				<a href="${spring:mvcUrl('EC#show').arg(0,event.eventId).build()}">Add Lecture</a>
+					<a href="${spring:mvcUrl('EC#show').arg(0,event.eventId).build()}">Add Lecture</a>
 				</c:if>
+			</td>
+			<td>
+				<form method="post" action="/LectureSelectionSystem/closeNewLectures">
+					<input type="hidden" name="eventId" id="eventId" value="${event.eventId}" />
+					<input type="submit" value="Close Lectures">
+				</form>
 			</td>
 		</c:forEach>
 	</table>
