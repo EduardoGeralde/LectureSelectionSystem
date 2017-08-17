@@ -66,4 +66,12 @@ public class EventsController {
 		System.out.println("Saving Lecture " + lecture + " in the Event " + event);
 		return "lectures/ok";
 	}
+	
+	@RequestMapping("/closeNewLectures")
+	public String closeNewLectures(@RequestParam("eventId") Integer id){
+		Event event = eventDao.find(id);
+		event.setEventActive(false);
+		System.out.println("Closing Event" + event);
+		return "lectures/ok";
+	}
 }
