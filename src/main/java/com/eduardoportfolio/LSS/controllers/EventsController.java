@@ -24,7 +24,7 @@ import com.eduardoportfolio.LSS.models.Lecture;
 //Tells that this class is effectively the responsible to meet requests from a client
 @Controller
 //Indicates that this methods needs transaction.
-@Transactional (dontRollbackOn = Exception.class)
+@Transactional //(dontRollbackOn = Exception.class)
 public class EventsController {
 	
 	//Responsible to indicates the injection points inside the class.
