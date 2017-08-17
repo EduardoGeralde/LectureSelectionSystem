@@ -49,6 +49,8 @@ public class Event {
 	private String eventLogoPath;
 	@DateTimeFormat(iso=ISO.DATE)
 	private Calendar eventDate;
+	@Column(columnDefinition = "boolean default true", nullable = false)
+	private boolean eventActive; 
 	//Used to define a collection of Embeddable objects (without PK)
 	@ElementCollection
 	//Changing the table name, and the Id key name.
@@ -106,11 +108,9 @@ public class Event {
 	public void setEventDate(Calendar eventDate) {
 		this.eventDate = eventDate;
 	}
-	
 	public Integer getEventId() {
 		return eventId;
 	}
-	
 	public void setEventId(Integer eventId) {
 		this.eventId = eventId;
 	}
@@ -119,6 +119,12 @@ public class Event {
 	}
 	public void setEventLectures(Collection<Lecture> eventLectures) {
 		this.eventLectures = eventLectures;
+	}
+	public boolean isEventActive() {
+		return eventActive;
+	}
+	public void setEventActive(boolean eventActive) {
+		this.eventActive = eventActive;
 	}
 	@Override
 	public String toString() {
