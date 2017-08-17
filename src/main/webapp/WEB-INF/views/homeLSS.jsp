@@ -35,9 +35,7 @@
 				<td>${event.eventLocal}</td>
 				<td>${event.eventDate}</td>
 				<td>
-					<form action="/LectureSelectionSystem/closeLectures">
-						<button type="submit">Close new lectures</button>
-					</form>
+					<a href="${spring:mvcUrl('EC#closeNewLectures').arg(0,event.eventId).build()}">Close new Lectures</a>
 				</td>
 				<td>
 				<c:forEach items="${event.eventLectures}" var="lectures">
