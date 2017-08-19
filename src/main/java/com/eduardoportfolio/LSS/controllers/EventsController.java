@@ -40,7 +40,7 @@ public class EventsController {
 	public String save (Event event) {
 		eventDao.save(event);
 		System.out.println("Saving the event" + event);
-		return "events/ok";
+		return "redirect:listEvents";
 	}
 	
 	@RequestMapping (value = "/listEvents", method=RequestMethod.GET)
@@ -64,7 +64,7 @@ public class EventsController {
 		event.getEventLectures().add(lecture);
 		eventDao.save(event);
 		System.out.println("Saving Lecture " + lecture + " in the Event " + event);
-		return "lectures/ok";
+		return "redirect:listEvents";
 	}
 	
 	@RequestMapping("/closeNewLectures")
@@ -72,6 +72,6 @@ public class EventsController {
 		Event event = eventDao.find(id);
 		event.setEventActive(false);
 		System.out.println("Closing Event" + event);
-		return "lectures/ok";
+		return "redirect:listEvents";
 	}
 }
