@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.eduardoportfolio.LSS.dao.UserDao;
 import com.eduardoportfolio.LSS.models.User;
@@ -26,16 +27,16 @@ public class UserController {
 	@Autowired
 	UserDao userDao = new UserDao();
 	
-	@RequestMapping("/showUserForm")
+	@RequestMapping(value ="/showUserForm", method=RequestMethod.GET)
 	public String show(){
 		return "registration/userRegistration";
 	}
 	
-	@RequestMapping ("/SaveUsers")
+	@RequestMapping (value = "/SaveUsers", method=RequestMethod.POST)
 	public String save (User user) {
 		userDao.save(user);
 		System.out.println("Registering the user");
-		return "users/ok";
+		return "redirect:listEvents";
 	}
 
 }
