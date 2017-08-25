@@ -29,9 +29,9 @@
 				<h3>Events</h3>
 			</td>
 		</tr>
-		<c:forEach items="${events}" var="event">
+		<c:forEach items="${events}" var="event" varStatus="count">
 			<tr>
-				<td>${event.eventName}</td>
+				<td>${events.eventName}</td>
 				<td>${event.eventLocal}</td>
 				<td>${event.eventDate}</td>
 				<td>
