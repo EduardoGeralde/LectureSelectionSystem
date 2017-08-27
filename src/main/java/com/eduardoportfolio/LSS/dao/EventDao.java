@@ -36,7 +36,7 @@ public class EventDao {
 	
 	public Event find(Integer id) {
 		TypedQuery<Event> query = manager.createQuery(
-				"select distinct (p) from Event p join fetch p.eventLectures where p.id=:id",
+				"select (p) from Event p join fetch p.eventLectures where p.id=:id",
 						Event.class).setParameter("id", id);
 		return query.getSingleResult();
 	}
