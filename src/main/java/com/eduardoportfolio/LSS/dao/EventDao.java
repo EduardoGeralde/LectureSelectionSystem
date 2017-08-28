@@ -26,12 +26,17 @@ public class EventDao {
 	@PersistenceContext
 	private EntityManager manager;
 	
+	
 	public void save (Event event){
 		manager.persist(event);
 	}
 	
 	public List<Event> list(){
 		return manager.createQuery("select distinct (p) from Event p join fetch p.eventLectures", Event.class).getResultList();
+	}
+	
+	public void delete(Event event){
+		manager.remove(event);
 	}
 	
 	public Event find(Integer id) {
