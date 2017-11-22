@@ -31,7 +31,7 @@
 		</tr>
 		<c:forEach items="${events}" var="event" varStatus="count">
 			<tr>
-				<td>${events.eventName}</td>
+				<td>${event.eventName}</td>
 				<td>${event.eventLocal}</td>
 				<td>${event.eventDate}</td>
 				<td>
